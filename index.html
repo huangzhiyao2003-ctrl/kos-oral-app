@@ -1512,9 +1512,85 @@ window.matchLearnFilter=function(section){if(currentLearnFilter==='all')return t
 window.getRulesByItem=function(item=currentItem){if(item==='implant')return['引流转化型内容是基础设施，必须稳定产出。','技术差异化内容最容易起量，是破圈关键。','科普内容适合做SEO，不适合做投放主力。','医生IP内容用于补信任，不承担主要转化。'];if(item==='veneer')return['精准症状转化型优先级最高，是主力内容。','FAQ是基础内容，不是投放主力。','效果展示互动高，但转化通常不如精准症状型。','促销型内容效果普遍较弱。'];return['症状决策型/判断型是最稳的起号载体。','助理运营型冷启动最快，劝退式叙事更容易拿点击。','医生IP更适合补信任，不适合冷启动阶段单独承担起量。','单篇爆款依赖度高于30%要预警，高于50%风险明显。'];};
 window.getMistakesByItem=function(item=currentItem){if(item==='implant')return['只做科普内容，不做引流内容。','从0内容开始重投放。','引流转化型比例长期低于50%。'];if(item==='veneer')return['一上来重投FAQ和促销内容。','忽略精准症状转化型。','中途停投超过7天，导致重启成本变高。'];return['只讲专业，不讲用户决策问题。','冷启动阶段过早追求强转化。','只靠单条爆款，不做同症状变体复制。'];};
 window.getMatrix=function(item,team,doctorShow){if(item==='orthodontics'){if(doctorShow==='none')return[{role:'助理号 × 2',desc:'一个做劝退/判断型，一个做转化承接，医生不出镜时先把助理号做强。'},{role:'机构/预约号 × 1',desc:'统一承接咨询和预约说明，不强做医生口吻。'}];if(team==='3')return[{role:'助理号 × 1',desc:'负责劝退式、判断型、咨询高频问题，优先起点击。'},{role:'医生号 × 1',desc:'负责建立专业信任，适合讲判断逻辑、症状解释。'},{role:'机构/预约号 × 1',desc:'承接咨询、发布预约说明和基础转化内容。'}];if(team==='4')return[{role:'助理号 × 2',desc:'一个偏冷启动，一个偏转化承接。'},{role:'医生号 × 1',desc:'稳定建立信任和专业判断。'},{role:'机构/预约号 × 1',desc:'统一承接咨询。'}];return[{role:'助理号 × 2',desc:'承担冷启动和转化前置内容。'},{role:'医生号 × 1',desc:'承担信任建立。'},{role:'美学号 × 1',desc:'围绕脸型、侧貌、颜值变化拉新。'},{role:'机构/预约号 × 1',desc:'承接咨询。'}];}if(item==='implant'){if(doctorShow==='none')return[{role:'助理号 × 2',desc:'一个做预约/答疑引流，一个做缺牙危害/一定要种吗等前置内容。'},{role:'机构/预约号 × 1',desc:'承接咨询和号位预约，弱化医生IP打法。'}];if(doctorShow==='some'&&team==='3')return[{role:'助理号 × 1',desc:'承担直接预约/牙片帮看等引流内容。'},{role:'医生IP号 × 1',desc:'医生偶尔出镜，重点做技术差异化和答疑。'},{role:'机构/预约号 × 1',desc:'统一承接咨询和转化。'}];if(team==='3')return[{role:'医生IP号 × 1',desc:'做技术差异化、答疑、方案理解内容。'},{role:'助理号 × 1',desc:'做预约、答疑、牙片帮看等直接引流内容。'},{role:'机构/预约号 × 1',desc:'承接咨询和转化。'}];return[{role:'医生IP号 × 1',desc:'负责技术差异化、医生价值型内容。'},{role:'助理号 × 1',desc:'负责直接预约/答疑转化。'},{role:'科普/痛点号 × 1',desc:'负责缺牙危害、痛点认知内容。'},{role:'机构/预约号 × 1',desc:'统一承接咨询。'}];}if(doctorShow==='none')return[{role:'精准症状转化号 × 1',desc:'主打牙缝大/过小牙/黄牙等高意向症状内容。'},{role:'助理预约号 × 1',desc:'负责沟通温度、预约承接。'},{role:'案例展示号 × 1',desc:'负责效果展示和信任补强。'}];if(team==='3')return[{role:'精准症状转化号 × 1',desc:'主打牙缝大/过小牙/黄牙等高意向症状内容。'},{role:'助理预约号 × 1',desc:'负责沟通温度、预约承接。'},{role:'案例展示号 × 1',desc:'负责效果展示和信任补强。'}];return[{role:'精准症状转化号 × 1',desc:'作为主力跑量号，优先做高ROI内容。'},{role:'助理预约号 × 1',desc:'做咨询承接和预约转化。'},{role:'案例展示号 × 1',desc:'强化结果感和信任。'},{role:'医生/美学号 × 1',desc:'补医生背书或审美专业感。'}];};
-window.getPhaseBenchmarks=function(item){if(item==='implant')return[{stage:'第1-2周｜冷启动期',min:'每周发布≥4篇；单篇均互动≥1',ok:'每周发布≥5篇；核心词覆盖≥3个',excellent:'已有1-2篇自然互动≥10',signal:'已发布≥5篇，覆盖资质/科普/引流三方向，且至少1篇自然互动≥5'},{stage:'第3-4周｜验证期',min:'单周总留资≥1条；综合成本≤¥1,500/条',ok:'单周总留资≥5条',excellent:'单周总留资≥8条；综合成本≤¥500/条',signal:'连续2周单周留资≥5条，且已找到1篇核心爆款笔记'},{stage:'第5周+｜规模复制期',min:'连续4周成本≤¥800/条；周留资≥5条；Top1占比≤60%',ok:'连续4周成本¥300-¥600/条；周留资≥8条',excellent:'成本持续下行至¥300/条以下；周留资≥10条；Top1占比<40%',signal:'持续复制3-5个爆款变体，并把投放池扩到30篇以上'}];if(item==='veneer')return[{stage:'第1周｜冷启动期',min:'周发布笔记≥4篇；单篇均互动≥5',ok:'第1周内发现1篇单篇留资≥3条',excellent:'第1周内发现1篇单周留资≥5条',signal:'1篇单篇累计留资≥5条，或单周全账号留资≥5条 → 立即进入加速阶段'},{stage:'第3-8周｜验证期',min:'单周总留资≥5条；综合留资成本≤¥600/条',ok:'连续2周单周留资≥5条；Top1占比≤50%',excellent:'连续4周单周留资≥10条；综合留资成本≤¥400/条',signal:'连续4周单周留资≥5条，且至少有2篇笔记在并行跑量'},{stage:'第9周+｜规模复制期',min:'综合留资成本连续4周不超过¥700/条；单篇爆款留资占比≤60%',ok:'综合留资成本稳定在¥400-¥600/条；周留资≥15条',excellent:'综合留资成本≤¥350/条；有3篇笔记并行跑量；Top1占比≤30%',signal:'每2周补1篇新变体，并监控Top1是否连续2周下滑>30%'}];return[{stage:'第1-3周｜冷启动期',min:'第3周末累计留资≥1条',ok:'第3周末累计留资≥2条',excellent:'第3周末累计留资≥5条',signal:'至少跑出1个可复制的症状/判断方向'},{stage:'第4-8周｜验证期',min:'单周≥3条',ok:'连续2周≥5条',excellent:'连续2周≥10条',signal:'至少找到1个核心爆款方向并开始复制变体'},{stage:'规模复制期',min:'月≥15条',ok:'月≥20条连续2月',excellent:'月≥40条',signal:'单篇依赖度若>30%要开始做4-6篇同症状变体'}];};
+window.getPhaseBenchmarks=function(item){
+if(item==='implant')return[
+{stage:'第1-2周｜冷启动期',min:'累计留资≥1条',ok:'累计留资≥3条',excellent:'累计留资≥5条',signal:'已发布≥5篇内容，且至少1篇笔记留资≥3条'},
+{stage:'第3-4周｜验证期',min:'单周留资≥3条',ok:'单周留资≥5条',excellent:'单周留资≥8条',signal:'连续2周单周留资≥5条，且出现1篇核心爆款（单篇≥5条）'},
+{stage:'第5周+｜规模复制期',min:'周留资≥5条',ok:'周留资≥8条',excellent:'周留资≥10条',signal:'至少2类内容稳定承接留资，Top1不再承担全部留资'}
+];
+if(item==='veneer')return[
+{stage:'第1-2周｜冷启动期',min:'累计留资≥1条',ok:'累计留资≥2条',excellent:'累计留资≥4条',signal:'至少1篇笔记留资≥2条，说明已有可放大的案例方向'},
+{stage:'第3-4周｜验证期',min:'单周留资≥3条',ok:'单周留资≥5条',excellent:'单周留资≥8条',signal:'连续2周单周留资≥5条，案例型内容开始稳定承接'},
+{stage:'第5周+｜规模复制期',min:'周留资≥5条',ok:'周留资≥8条',excellent:'周留资≥12条',signal:'爆款案例模板可持续复制，且不只依赖单一案例'}
+];
+return[
+{stage:'第1-3周｜冷启动期',min:'累计留资≥1条',ok:'累计留资≥2条',excellent:'累计留资≥5条',signal:'至少跑出1个可复制的症状/判断方向'},
+{stage:'第4-8周｜验证期',min:'单周留资≥3条',ok:'连续2周单周留资≥5条',excellent:'连续2周单周留资≥10条',signal:'至少找到1个核心爆款方向并开始复制变体'},
+{stage:'第9周+｜规模复制期',min:'月留资≥15条',ok:'月留资≥20条（连续2个月）',excellent:'月留资≥40条',signal:'单篇依赖度升高时立即补4-6篇同症状变体'}
+];
+};
 window.getFastPath=function(item,doctorShow='some'){if(item==='orthodontics')return[{title:'第1-3周｜冷启动期',text:`先起点击，不急转化。\n优先发劝退式、判断型、症状决策型内容。${doctorShow==='none'?' 医生不出镜时，先把助理判断型和机构承接号做起来。':''}`},{title:'第4-8周｜验证期',text:'围绕1个核心症状做3-5篇变体，开始轻投放。\n找到1个核心方向后再补医生IP和案例解释。'},{title:'第9周+｜规模复制期',text:'把留资最高的症状/颜值方向复制出3-5篇变体，持续放量。\n监控单篇依赖度，避免长期只靠1条笔记。'}];if(item==='implant')return[{title:'第1-2周｜冷启动期',text:`先铺内容，不急着从0投放。\n优先发资质/人设内容、缺牙危害/一定要种吗这类痛点科普、预约引流/答疑类内容。${doctorShow==='none'?' 医生不出镜时，把预约/答疑和缺牙危害两条线先跑通。':''}`},{title:'第3-4周｜验证期',text:'开始投放。\n引流转化型内容占比提高到50%左右，技术差异化引流型和直接预约/答疑型同步测试。'},{title:'第5周+｜规模复制期',text:'持续扩充投放池，核心爆款给足预算跑量。\n每周补1-2篇新测试内容，爆款老化时立刻复制3-5个变体。'}];return[{title:'第1周｜冷启动期',text:`目标不是慢铺内容，而是尽快找到“精准症状词 + 顾虑解除词”的爆款方向。\n精准症状转化型高频测试，FAQ仅做SEO布局。${doctorShow==='none'?' 医生不出镜时更要强化真实案例图和助理承接。':''}`},{title:'第3-8周｜验证期',text:'围绕已验证方向持续做变体。\n精准症状转化型持续跑量，效果展示型做辅助测试，医生IP内容低频维持温度。'},{title:'第9周+｜规模复制期',text:'维持2-3篇并行跑量的精准症状内容，FAQ继续不投放做基础内容。\n控制Top1依赖度，持续补新素材。'}];};
-window.getTodoByItem=function(item,stage,doctorShow='some'){if(item==='orthodontics'){const arr=['本周至少发5条，优先保证3条劝退/判断型内容。','整理评论区和私信里最常见的5个问题，反推选题。','先找1个高点击方向做2-3个变体，不要同时铺太多线。'];if(doctorShow==='none')arr.push('医生不出镜时，把机构/助理口吻统一起来，不要硬装医生视角。');else arr.push('医生出镜内容用来补信任，不要一上来全做纯科普。');return arr;}if(item==='implant'){const arr=['先准备5-7条内容，覆盖“资质/人设、痛点科普、预约引流”三类。','本周至少测试2条技术差异化内容和2条预约/答疑型内容。','投放预算优先给引流转化型，科普不要做投放主力。'];if(doctorShow==='none')arr.push('医生不出镜时，直接预约/引流转化型比例要更高。');else arr.push('医生出镜内容重点讲技术差异和判断逻辑，不要只讲头衔。');return arr;}const arr=['本周优先做5-7条精准症状转化型内容，不要先铺泛FAQ。','每条标题都检查是否同时包含“症状词 + 顾虑解除词”。','FAQ内容每3天1条即可，主要用于SEO，不做主投放。'];if(doctorShow!=='none')arr.push('医生适合低频出镜讲判断和风险，不用高频承担全部产出。');return arr;};
+window.getTodoByItem=function(item,stage,doctorShow='some'){
+if(item==='orthodontics'){
+  if(stage==='start') return [
+    '判断型 / 症状决策型：3-4篇；围绕1个核心症状做判断与分型。',
+    '劝退 / 避坑型：2篇；优先拿点击，不急着讲复杂方案。',
+    '医生IP / 身份锚定：1篇；只做信任底座，不承担前期主起量。',
+    '内容配比建议：判断型60%｜劝退型25%｜医生IP15%。'
+  ];
+  if(stage==='grow') return [
+    '判断型：2-3篇；把高表现结构做2-3个同症状变体。',
+    '劝退型：1-2篇；继续稳点击，承接新的问题入口。',
+    '案例解释 / 结果说明：1-2篇；补“为什么会这样变”。',
+    '内容配比建议：判断型50%｜劝退型25%｜案例解释15%｜医生IP10%。'
+  ];
+  return [
+    '判断型：2篇；维持主流量入口。',
+    '劝退型 / 高频问题：1篇；维持新用户进入。',
+    '案例解释型：1-2篇；补信任与结果理解。',
+    '医生IP / 日常温度内容：1篇；维持账号可信感。',
+    '内容配比建议：判断型40%｜案例解释25%｜劝退型20%｜医生IP15%。'
+  ];
+}
+if(item==='implant'){
+  if(stage==='start') return [
+    '医生资质 / IP介绍类：2-3篇；告诉用户这个医生是谁、擅长什么。',
+    '缺牙核心痛点科普类：5-7篇；围绕“缺牙危害 / 一定要种吗 / 拖着会怎样”展开。',
+    '预约引流 / 答疑类：2-3篇；用“你发牙片 / 照片，闲时帮看”这类低门槛入口。',
+    '内容配比建议：痛点科普60%｜预约引流25%｜医生IP15%。'
+  ];
+  if(stage==='grow') return [
+    '技术差异化引流型：2-3篇；聚焦“为什么不一定按老办法做”。',
+    '直接预约 / 答疑型：2-3篇；承接咨询动作，降低决策门槛。',
+    '缺牙危害 / 科普补充型：1-2篇；继续做认知铺垫。',
+    '内容配比建议：引流转化50%｜技术差异化30%｜科普20%。'
+  ];
+  return [
+    '直接预约 / 引流转化型：3-4篇；做稳定承接。',
+    '技术差异化变体：1-2篇；围绕爆款方向持续复制。',
+    '日常科普 / IP类：1-2篇；维持账号可信度和新问题覆盖。',
+    '内容配比建议：引流转化60%｜技术差异化25%｜IP/科普15%。'
+  ];
+}
+if(stage==='start') return [
+  '颜值变化案例：4-6篇；优先让用户看到“变成什么样”。',
+  '轻科普 / 适合人群 / 误区：2-3篇；只做基础解释。',
+  '引流承接类：1-2篇；承接咨询但不喧宾夺主。',
+  '内容配比建议：案例65%｜科普20%｜引流15%。'
+];
+if(stage==='grow') return [
+  '颜值案例强化：3-4篇；围绕高表现案例持续做同类题材。',
+  '预约 / 承接类：2-3篇；把意向用户往咨询动作上带。',
+  '轻科普：1篇；做FAQ补位即可。',
+  '内容配比建议：案例60%｜引流30%｜科普10%。'
+];
+return [
+  '爆款案例变体：3-4篇；继续复制“同问题、不同脸型/角度/表达”。',
+  '新案例测试：1-2篇；补新素材，防止题材疲劳。',
+  'FAQ / 轻科普：1-2篇；维持SEO和自然搜索流。',
+  '内容配比建议：案例70%｜引流20%｜科普10%。'
+];
+};
 window.generatePlannerResult=function(){const team=document.getElementById('team')?.value||'3';const stage=document.getElementById('stage')?.value||'start';const doctorShow=document.getElementById('doctorShow')?.value||'some';const item=currentItem||'orthodontics';const itemName=getItemName(item);const speed=getSpeed(item);const matrix=getMatrix(item,team,doctorShow);const fastPath=getFastPath(item,doctorShow);const phaseBench=getPhaseBenchmarks(item);const benchmark=getBenchmarkByItem(item);const todos=getTodoByItem(item,stage,doctorShow);const kpis=getKpiByItem(item);const risks=getRiskTips(item,doctorShow);const rules=getRulesByItem(item);const mistakes=getMistakesByItem(item);const html=`<div class="plan-card"><div class="plan-title">结论（直接照做）</div><div class="todo-item">当前更适合优先做：<b>${getMainStrategy(item)}</b><br><br>不建议优先做：${getAvoidStrategy(item)}</div></div><div class="rule-card"><div class="rule-title">🧠 核心规律（先看这个）</div>${rules.map(r=>`<div class="rule-item">• ${r}</div>`).join('')}</div><div class="plan-card"><div class="plan-highlight">🚀 当前品项最短起号路径 <span class="speed-chip">${speed}</span></div><div class="plan-title">${itemName}｜推荐账号矩阵</div><div class="matrix-grid">${matrix.map(m=>`<div class="matrix-item"><div class="matrix-role">${m.role}</div><div class="matrix-desc">${m.desc}</div></div>`).join('')}</div></div><div class="plan-card"><div class="plan-title">0-1最短起号路径</div>${fastPath.map((p,idx)=>`<div class="path-block" style="margin-bottom:10px;"><div class="path-title">${p.title}</div><div class="path-text">${p.text}</div><div class="plan-subtitle" style="margin-top:8px;margin-bottom:6px;">阶段 Benchmark</div><div class="kpi-grid" style="grid-template-columns:1fr 1fr 1fr;"><div class="kpi-item"><div class="kpi-label">最低线</div><div class="kpi-value" style="font-size:12px;line-height:1.5;">${phaseBench[idx].min}</div></div><div class="kpi-item"><div class="kpi-label">达标线</div><div class="kpi-value" style="font-size:12px;line-height:1.5;">${phaseBench[idx].ok}</div></div><div class="kpi-item"><div class="kpi-label">优秀线</div><div class="kpi-value" style="font-size:12px;line-height:1.5;">${phaseBench[idx].excellent}</div></div></div><div class="tip-item" style="margin-top:8px;">进入下一阶段信号：${phaseBench[idx].signal}</div></div>`).join('')}</div><div class="plan-card"><div class="plan-title">Benchmark参考</div><div class="plan-subtitle">先选1个模型打爆，不要一上来同时做三种</div><div class="benchmark-list">${benchmark.map(b=>`<div class="benchmark-item"><div class="bm-title">${b.title}</div><div class="bm-desc">${b.desc}</div><div class="bm-tip">👉 ${b.tip}</div></div>`).join('')}</div></div><div class="plan-card"><div class="plan-title">本周 To Do</div><div class="todo-list">${todos.map(t=>`<div class="todo-item">${t}</div>`).join('')}</div></div><div class="plan-card"><div class="plan-title">当前重点 KPI</div><div class="kpi-grid">${kpis.map(k=>`<div class="kpi-item"><div class="kpi-label">${k.label}</div><div class="kpi-value">${k.value}</div></div>`).join('')}</div></div><div class="mistake-card"><div class="rule-title">⚠️ 常见误区</div>${mistakes.map(m=>`<div class="rule-item">• ${m}</div>`).join('')}</div><div class="plan-card"><div class="plan-title">风险提醒</div><div class="tip-list">${risks.map(r=>`<div class="tip-item">${r}</div>`).join('')}</div></div>`;const box=document.getElementById('plannerResult');box.innerHTML=html;box.classList.remove('hidden');box.scrollIntoView({behavior:'smooth',block:'start'});};
 window.getContentTypesByItem=function(){return []};
 // content data inserted later by previous script; keep if overwritten below
